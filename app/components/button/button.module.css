@@ -1,0 +1,16 @@
+.titlebutton {
+	text-decoration: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	width: 15%;
+	height: 20px;
+	background-color: rgb(var(--primary));
+	padding: 3px;
+	border-radius: 3px;
+	text-align: center;
+	cursor: pointer;
+}

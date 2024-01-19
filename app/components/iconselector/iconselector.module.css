@@ -1,0 +1,11 @@
+.selector {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	gap: 10px;
+}
+
+.selector svg {
+	color: rgb(var(--primary));
+	margin-left: -70px;
+}

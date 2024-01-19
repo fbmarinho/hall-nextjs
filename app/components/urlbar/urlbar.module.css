@@ -1,0 +1,33 @@
+.urlbar {
+	display: flex;
+	height: 40px;
+	font-size: 14px;
+	width: 100%;
+	color: white;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+	background-color: rgb(var(--secondary));
+}
+
+.urlbar > form > label {
+	color: white;
+	font-size: 14px;
+}
+
+.urlbar > form > input[type="text"] {
+	padding: 4px;
+	width: 300px;
+	color: rgb(var(--foreground-rgb));
+	background-color: rgb(var(--background-rgb));
+}
+
+.urlbar > form > input[type="submit"] {
+	padding: 5px;
+	color: white;
+	background-color: rgb(var(--primary));
+	text-transform: uppercase;
+	border: none;
+	border-radius: 3px;
+	margin-left: 5px;
+}

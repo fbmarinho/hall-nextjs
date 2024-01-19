@@ -1,0 +1,42 @@
+.divisoria {
+	margin: 10px;
+	border: 2px solid rgb(var(--secondary));
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 5px;
+}
+
+.title {
+	padding: 5px;
+	font-size: 10px;
+	text-transform: uppercase;
+	color: rgb(var(--background-rgb));
+	background-color: rgb(var(--secondary));
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.warning {
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.warning span {
+	font-size: 10px;
+	text-decoration: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: rgb(var(--warning-text));
+	width: 100%;
+	background-color: rgb(var(--warning-bg));
+	padding: 10px;
+	margin: 2px;
+	border-radius: 5px;
+	text-align: center;
+}

@@ -1,0 +1,32 @@
+.topbar {
+	display: flex;
+	height: 20px;
+	font-size: 10px;
+	width: 100%;
+	color: white;
+	background-color: rgb(var(--primary));
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+}
+
+.topbar svg {
+	margin-right: 10px;
+}
+
+.title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-grow: 1;
+}
+
+.topbar a {
+	color: white;
+	text-decoration: none;
+	font-size: 8px;
+	margin-right: 10px;
+}
+.topbar a:hover {
+	color: rgb(var(--warning));
+}
