@@ -1,21 +1,50 @@
 "use server";
-import { PrismaClient, Link } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
+import { z } from "zod";
 
 const prisma = new PrismaClient();
 
-export async function create(formData: FormData) {
-	const data = {
-		icon: formData.get("icon"),
-		label: formData.get("label"),
-		description: formData.get("description"),
-		href: formData.get("href"),
-		type: formData.get("type"),
-		status: "requested",
-		createdAt: Date.now().toLocaleString(),
-		modifiedAt: Date.now().toLocaleString(),
-	};
+type Link = z.infer<typeof LinkSchemma>;
+const now = new Date(Date.now()).toISOString();
+const LinkSchemma = z.object({
+  icon: z.string(),
+  label: z.string().min(3),
+  description: z.string(),
+  href: z.string().url(),
+  type: z.string(),
+  status: z.string().default("requested"),
+  createdAt: z.string().default(now),
+  modifiedAt: z.string().default(now),
+});
 
-	console.log(data);
+export type FormState = {
+  message: string;
+  errors?: string;
+};
 
-	return data;
+export async function create(prevState: FormState, formData: FormData) {
+  const form = Object.fromEntries(formData.entries());
+
+  // validation
+  const validation = LinkSchemma.safeParse(form);
+
+  if (!validation.success) {
+    return {
+      message: "validation errors",
+      errors: validation.error.flatten().fieldErrors,
+    };
+  }
+
+  // mutate data
+  try {
+    await prisma.link.create({ data: validation.data });
+    return {
+      message: "added",
+    };
+  } catch (e) {
+    return {
+      message: "Error creating personnel",
+      errors: e,
+    };
+  }
 }

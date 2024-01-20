@@ -1,0 +1,18 @@
+.submitbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 20px;
+  color: white;
+  background-color: rgb(var(--primary));
+  border: none;
+  border-radius: 5px;
+}
+
+.disabled {
+  color: #444;
+  background-color: rgb(var(--neutral));
+}
